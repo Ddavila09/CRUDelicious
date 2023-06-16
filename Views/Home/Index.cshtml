@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Dish>
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to CRUDelicious</h1>
+    <a asp-controller="Home" asp-action="NewDish"> Create New Post</a>
+</div>
+<br>
+
+@foreach (Dish dish in Model)
+{
+    <div class="card shadow rounded mx-auto w-75 mb-3">
+        <h4 class="card-title text-center bg-dark text-light py-2 rounded-top">
+            @dish.DishName
+        </h4>
+        <div class="card-body text-center">
+            <p class="card-text">by @dish.UserName</p>
+            <small class="text-muted"> Submitted on: @dish.CreatedAt </small>
+        </div>
+        <img src="@dish.ImgUrl" alt="related to dish" class="card-img-bottom"/>
+        <br>
+        <a class="text-center" asp-controller="Home" asp-action="ViewDish" asp-route-id="@dish.DishId"> View Dish</a>
+        <br>
+    </div>
+}

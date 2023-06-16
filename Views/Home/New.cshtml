@@ -1,0 +1,43 @@
+@model Dish
+
+<a asp-controller="Home" asp-action="Index">Home</a>
+
+
+<div class="container w-75 mx-auto">
+    <h2 class="text-center">Add a new Dish!</h2>
+
+    <form class="shadow p-3 rounded text-center"  asp-controller="Home" asp-action="CreateDish" method="POST">
+        <div class="mb-3">
+            <label asp-for="UserName">Chef's Name</label>
+            <span asp-validation-for="UserName" class="text-danger font-weight-bold"></span>
+            <input class="form-control" asp-for="UserName">
+        </div>
+        <div class="mb-3">
+            <label asp-for="DishName">Name of Dish</label>
+            <span asp-validation-for="DishName" class="text-danger font-weight-bold"></span>
+            <input class="form-control" asp-for="DishName">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Calories"></label>
+            <span asp-validation-for="Calories" class="text-danger font-weight-bold"></span>
+            <input class="form-control" asp-for="Calories">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Tastiness"></label>
+            <span asp-validation-for="Tastiness" class="text-danger font-weight-bold"></span>
+            <input class="form-control" asp-for="Tastiness">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <span asp-validation-for="Description" class="text-danger font-weight-bold"></span>
+            <input class="form-control" asp-for="Description">
+        </div>
+        <div class="mb-3">
+            <label asp-for="ImgUrl"></label>
+            <span asp-validation-for="ImgUrl" class="text-danger font-weight-bold"></span>
+            <input class="form-control" asp-for="ImgUrl">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
